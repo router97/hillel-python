@@ -42,7 +42,7 @@ if task == '1':
     dir_func(1)
     time.sleep(4)
     dir_func(2)
-    time.sleep(2)
+    time.sleep(4)
     dir_func(3)
     time.sleep(8)
     dir_func(4)

@@ -58,8 +58,7 @@ if task == '2':
             os.mkdir('NEW DIR')
         while var == 1:
             with open("NEW DIR\\NEW FILE.txt", "a") as fl:
-                for i in range(5):
-                    fl.write(input("write: ") + "\n" )
+                fl.write(input("write: ") + "\n" )
             with open("NEW DIR\\NEW FILE.txt", "r") as fl:
                 print(fl.read())
     file_func(1)

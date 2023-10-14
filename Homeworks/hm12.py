@@ -14,31 +14,32 @@ while True:
         continue
 
 """ Task 1 - directory work """
-if task == '1':
-    def dir_func(var): # creates, moves, copies, deletes files
-        try:
-            if var == 1:
-                os.mkdir('NEW DIR')
-                open('NEW DIR/NEW FILE.txt', 'w').close()
-                open('NEW DIR/NEW FILE2.txt', 'w').close()
-                print("created")
-        except FileExistsError:
-            shutil.rmtree("NEW DIR")
+
+def dir_func(var): # creates, moves, copies, deletes files
+    try:
+        if var == 1:
             os.mkdir('NEW DIR')
             open('NEW DIR/NEW FILE.txt', 'w').close()
             open('NEW DIR/NEW FILE2.txt', 'w').close()
             print("created")
-        if var == 2:
-            os.mkdir("NEW DIR\\NEWER DIR")
-            shutil.move("NEW DIR/NEW FILE.txt", "NEW DIR/NEWER DIR")
-            print("moved")
-        if var == 3:
-            shutil.copy("NEW DIR/NEWER DIR/NEW FILE.txt", "NEW DIR/NEW FILE.txt")
-            shutil.copytree("NEW DIR", "NEW DIR/NEW DIR COPY")
-            print("copied")
-        if var == 4:
-            shutil.rmtree("NEW DIR")
-            print("deleted")
+    except FileExistsError:
+        shutil.rmtree("NEW DIR")
+        os.mkdir('NEW DIR')
+        open('NEW DIR/NEW FILE.txt', 'w').close()
+        open('NEW DIR/NEW FILE2.txt', 'w').close()
+        print("created")
+    if var == 2:
+        os.mkdir("NEW DIR\\NEWER DIR")
+        shutil.move("NEW DIR/NEW FILE.txt", "NEW DIR/NEWER DIR")
+        print("moved")
+    if var == 3:
+        shutil.copy("NEW DIR/NEWER DIR/NEW FILE.txt", "NEW DIR/NEW FILE.txt")
+        shutil.copytree("NEW DIR", "NEW DIR/NEW DIR COPY")
+        print("copied")
+    if var == 4:
+        shutil.rmtree("NEW DIR")
+        print("deleted")
+if task == '1':
     dir_func(1)
     time.sleep(4)
     dir_func(2)
@@ -49,18 +50,19 @@ if task == '1':
 
 
 """ Task 2 - file editing """
+
+def file_func(var): # creates a file, lets you write 5 lines then read the file in a loop
+    try:
+        os.mkdir('NEW DIR')
+    except FileExistsError:
+        shutil.rmtree("NEW DIR")
+        os.mkdir('NEW DIR')
+    while var == 1:
+        with open("NEW DIR\\NEW FILE.txt", "a") as fl:
+            fl.write(input("write: ") + "\n" )
+        with open("NEW DIR\\NEW FILE.txt", "r") as fl:
+            print(fl.read())
 if task == '2':
-    def file_func(var): # creates a file, lets you write 5 lines then read the file in a loop
-        try:
-            os.mkdir('NEW DIR')
-        except FileExistsError:
-            shutil.rmtree("NEW DIR")
-            os.mkdir('NEW DIR')
-        while var == 1:
-            with open("NEW DIR\\NEW FILE.txt", "a") as fl:
-                fl.write(input("write: ") + "\n" )
-            with open("NEW DIR\\NEW FILE.txt", "r") as fl:
-                print(fl.read())
     file_func(1)
 
 

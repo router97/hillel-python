@@ -5,12 +5,12 @@ from faker import Faker
 faker = Faker()
 
 """ Functions """
-def fileCheck():
+def existCheck():
     try:
-        os.mkdir('NEW DIR')
+        os.mkdir('NEW DIR') # создаю папку, если её нету
     except FileExistsError:
         pass
-    open('NEW DIR/data.txt', 'a').close()
+    open('NEW DIR/data.txt', 'a').close() # создаю файл, если его нету
 
 """ Choosing task """
 while True:
@@ -23,7 +23,10 @@ while True:
 
 """ File reading """
 if task == '1':
-    fileCheck()
+    existCheck()
+    if os.stat('NEW DIR/data.txt').st_size==0: # если файл пустой
+        print("file is empty!")
+        exit() # закончить программу
     with open('NEW DIR/data.txt', 'r') as fl:
         lines = fl.readlines()
         lines = [str(line).replace("\n", "").split(",") for line in lines]
@@ -34,7 +37,7 @@ if task == '1':
 
 """ File writing """
 if task == '2':
-    fileCheck()
+    existCheck()
     while True:
         with open('NEW DIR/data.txt', 'a') as fl:
                 print("name: ", end='')
@@ -46,7 +49,7 @@ if task == '2':
 
 """ Generating data """
 if task == '3':
-    fileCheck()
+    existCheck()
     with open('NEW DIR/data.txt', 'w') as fl:
         for i in range(5):
             fl.write(f"{faker.first_name()},{faker.last_name()},")

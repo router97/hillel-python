@@ -1,4 +1,4 @@
-# Homework 16 - Vladislav
+# Homework 16 - Vladyslav
 
 from faker import Faker
 from random import randint

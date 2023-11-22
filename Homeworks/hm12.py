@@ -1,4 +1,4 @@
-# Homework 12 - Vladislav
+# Homework 12 - Vladyslav
 
 
 import os 

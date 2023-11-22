@@ -1,4 +1,4 @@
-# Homework 8 - Vladislav
+# Homework 8 - Vladyslav
 
 """ Подключение функций """
 from random import randint # импортирую функцию randint из библиотеки random

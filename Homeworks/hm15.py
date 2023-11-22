@@ -1,4 +1,4 @@
-# Homework 13 - Vladislav
+# Homework 13 - Vladyslav
 
 """ Task 1 - List, Tuple """
 list1 = ["red", "blue", "green"]

@@ -1,4 +1,4 @@
-# Homework 2 - Vladislav
+# Homework 2 - Vladyslav
 
 str1 = input("Строка 1: ")
 str2 = input("Строка 2: ")

@@ -1,4 +1,4 @@
-# Homework 11 - Vladislav
+# Homework 11 - Vladyslav
 
 
 from random import randint

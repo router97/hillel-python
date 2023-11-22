@@ -1,4 +1,4 @@
-# Homework 6 - Vladislav
+# Homework 6 - Vladyslav
 
 print("type end to finish")
 

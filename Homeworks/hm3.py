@@ -1,4 +1,4 @@
-# Homework 3 - Vladislav
+# Homework 3 - Vladyslav
 
 num_input = None
 error_count = False

@@ -1,4 +1,4 @@
-# Homework 13 - Vladislav
+# Homework 13 - Vladyslav
 
 import os
 from faker import Faker

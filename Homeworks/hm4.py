@@ -1,4 +1,4 @@
-# Homework 4 - Vladislav
+# Homework 4 - Vladyslav
 number = ''
 task = input("type 1 for multiplication table, 2 for grades: ")
 

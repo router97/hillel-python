@@ -1,4 +1,4 @@
-# Homework 10 - Vladislav
+# Homework 10 - Vladyslav
 
 
 while True:

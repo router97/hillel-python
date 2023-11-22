@@ -1,4 +1,4 @@
-# Homework 8 - Vladislav
+# Homework 8 - Vladyslav
 
 print("type your numbers or type end to stop\n")
 input_list = []

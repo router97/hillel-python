@@ -1,4 +1,4 @@
-# Homework 7 - Vladislav
+# Homework 7 - Vladyslav
 
 task = input("enter 1 for Colors, 2 for Odd List, 2alt for alt Odd List: ")
 

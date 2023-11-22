@@ -1,4 +1,4 @@
-# Homework 5 - Vladislav
+# Homework 5 - Vladyslav
 
 height = ''
 

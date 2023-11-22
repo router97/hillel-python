@@ -1,4 +1,4 @@
-# Homework 14 - Vladislav
+# Homework 14 - Vladyslav
 
 
 

@@ -8,7 +8,7 @@ def repeated(input_str: str) -> bool:
     string_length = len(input_str)
     
     # Check if the given string is more than 1 character
-    if len(input_str) <= 1:
+    if string_length <= 1:
         return False
     
     # Setting the amount of characters to check, because a pattern cannot be more than half of the string's length

@@ -1,15 +1,36 @@
-def password_validator(password: str) -> bool:
+def password_validator(password: str) -> dict:
+    
+    if not isinstance(password, str):
+        raise ValueError('Password must be a string')
+    
+    check_dict = {
+        'length': True,
+        'uppercase': False,
+        'lowercase': False,
+        'digit': False,
+        'symbol': False,
+        'supported': True
+    }
     
     if 8 > len(password) or 12 < len(password):
-        print('password length must be between 8 and 12 chars')
-        return False
+        check_dict['length'] = False
     
-    print('password valid')
-    return True
+    for char in password:
+        if char.isupper():
+            check_dict['uppercase'] = True
+        elif char.islower():
+            check_dict['lowercase'] = True
+        elif char.isdigit():
+            check_dict['digit'] = True
+        elif char in '*-#':
+            check_dict['symbol'] = True
+        else:
+            check_dict['supported'] = False
+    
+    return check_dict
 
-# У паролі повинні бути великі літери, малі символи, 
-# числа та спеціальні знаки (з переліку *-# інші спецсимволи неприпустимі)
+print(password_validator('okaylilbro'))
 
-if __name__ == '__main__':
-    while True:
-        print(password_validator(input('Enter your password: ')))
+# if __name__ == '__main__':
+#     while True:
+#         print(password_validator(input('Enter your password: ')))

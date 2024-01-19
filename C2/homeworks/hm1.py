@@ -1,25 +1,12 @@
 # Homework 1 - Password validator
 
-def password_validator(password: str) -> dict[str: bool]:
-    """
-    Validates a password.
-    
-    Parameters:
-        password: str - The password to be validated
-    
-    A valid password must contain: 
-        - at least one uppercase and lowercase letter
-        - a digit
-        - one of these characters: *-#
-    
-    Returns:
-        dict[str: bool] - a dictionary of which the keys are conditions and the values(boolean) are whether the condition are met or not
-    """
+def password_validator(password: str) -> dict[str, bool]:
 
     # Check if the password is a string
     if not isinstance(password, str):
         raise TypeError('Password must be a string')
     
+    # Check if the password is an empty string
     if not password:
         raise ValueError('Password cannot be empty')
     
@@ -28,21 +15,22 @@ def password_validator(password: str) -> dict[str: bool]:
     
     # Define the allowed characters
     allowed_chars = set('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789*-#')
+    
+    # Define must-have characters
     uppercase_chars = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
     lowercase_chars = set('abcdefghijklmnopqrstuvwxyz')
     digit_chars = set('0123456789')
     special_chars = set('*-#')
     
-    # Run checks and make a dictionary bool value for each check
+    # Run checks and make a dictionary bool value for each condition
     check_dict = {
         'length': 8 <= len(password) <= 12,
         'uppercase': bool(password_set.intersection(uppercase_chars)),
         'lowercase': bool(password_set.intersection(lowercase_chars)),
         'digit': bool(password_set.intersection(digit_chars)),
         'symbol': bool(password_set.intersection(special_chars)),
-        'supported': not bool(password_set.difference(allowed_chars))
+        'supported': password_set.issubset(allowed_chars)
     }
-    
     return check_dict
 
 if __name__ == '__main__':

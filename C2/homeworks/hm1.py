@@ -33,6 +33,7 @@ def password_validator(password: str) -> dict[str, bool]:
     }
     return check_dict
 
+
 if __name__ == '__main__':
     while True:
         password = input('Enter your password: ')

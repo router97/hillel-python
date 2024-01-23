@@ -1,42 +1,46 @@
 # Homework 2 - first_last & camel
 
-def first_last(st: str, *args: str) -> list[tuple]:
-    """Find the first and last position of provided letters in the provided string"""
+def first_last(input_string: str, *letters: str) -> list[tuple]:
+    """Find the first and last index of provided letters in the provided string"""
     
     # Check for a valid type
-    if not isinstance(st, str):
-        raise TypeError(f"Invalid argument type. Expected {str}, got {type(st)}")
+    if not isinstance(input_string, str):
+        raise TypeError(f"Invalid argument type. Expected {str}, got {type(input_string)}")
     
     # Check if any args provided
-    if not args:
+    if not letters:
         return
     
     result = []
     
     # Convert string to casefold and create a reversed version
-    st_casefold = st.casefold()
-    st_reversed = st_casefold[::-1]
+    input_string_casefold = input_string.casefold()
+    input_string_reversed = input_string_casefold[::-1]
     
     # Getting the length of the string
-    st_len = len(st)
+    st_len = len(input_string)
     
     # Iterating over each given character
-    for letter in args:
+    for letter in letters:
         
         # Check for a valid type
         if not isinstance(letter, str):
-            raise TypeError(f"Invalid argument type. Expected {str}, got {type(st)}")
+            raise TypeError(f"Invalid argument type. Expected {str}, got {type(letter)}")
 
         # Casefold the letter
         letter = letter.casefold()
         
         # Check if the letter is present
-        if letter not in st_casefold:
+        if letter not in input_string_casefold:
             result.append((None, None))
-            continue
-        
-        # Else: append a tuple with 2 integers(first and last position) to result
-        result.append((st_casefold.find(letter), st_len-st_reversed.find(letter)-1))
+        else:
+            # append a tuple with 2 integers(first and last position) to result
+            result.append(
+                (
+                    input_string_casefold.find(letter), 
+                    st_len - input_string_reversed.find(letter) - 1
+                )
+            )
     
     # Return the result
     return result
@@ -65,19 +69,19 @@ def camel(st: str) -> str:
         result += char
         
         # If the character isn't a punctuation, flip the switch
-        if char not in (' ', '.', ',', '!', '?', '-'):
+        if char not in " .,!?-":
             switch = not switch
     
     return result
+
 
 st1 = "Задаючи завдання додому, вчителі мітять у учнів, а потрапляють у батьків."
 st2 = "Ніколи! Ніколи не нюхайте як кипить чайник."
 st3 = "Математичні завдання - це єдине місце, де хтось може купити 60 кавунів і ніхто його не запитає навіщо?"
 st4 = "Як тільки зібрався взятися за розум, закінчився навчальний рік."
 st5 = "Зник собака, дуже розумна. Кулька, якщо ти зараз це читаєш, подзвони додому!"
-
 for i in (st1, st2, st3, st4, st5):
     print(camel(i))
 
-st1 = 'Helpless'
-print(first_last(st1, 'e'))
+st1 = 'Ryan Gosling'
+print(first_last(st1, 'n'))

@@ -45,19 +45,19 @@ def first_last(input_string: str, *letters: str) -> list[tuple]:
     # Return the result
     return result
 
-def camel(st: str) -> str:
+def camel(input_string: str) -> str:
     """Convert the string to CaMeLcAsE"""
     
     # Check for a valid type
-    if not isinstance(st, str):
-        raise TypeError(f"Invalid argument type. Expected {str}, got {type(st)}")
+    if not isinstance(input_string, str):
+        raise TypeError(f"Invalid argument type. Expected {str}, got {type(input_string)}")
     
     # Initialize the switch and result
     switch = True
     result = ''
     
     # Iterating over each character in the provided string
-    for char in st:
+    for char in input_string:
         
         # Check if must change the letter to uppercase or lowercase
         if switch:

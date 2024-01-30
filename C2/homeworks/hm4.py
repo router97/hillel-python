@@ -19,22 +19,26 @@ class Human:
 class Man(Human):
     
     def __init__(self, 
+                 adress: str, 
+                 phone: str, 
+                 job: str, 
+                 salary: int, 
                  first_name: str, 
-                 last_name: str, 
-                 *args, 
-                 **kwargs):
-        super().__init__(*args, **kwargs)
+                 last_name: str):
+        super().__init__(adress, phone, job, salary)
         self.first_name = first_name
         self.last_name = last_name
 
 class Woman(Human):
     
     def __init__(self, 
+                 adress: str, 
+                 phone: str, 
+                 job: str, 
+                 salary: int, 
                  first_name: str, 
-                 last_name: str, 
-                 *args, 
-                 **kwargs):
-        super().__init__(*args, **kwargs)
+                 last_name: str):
+        super().__init__(adress, phone, job, salary)
         self.first_name = first_name
         self.last_name = last_name
 
@@ -45,8 +49,8 @@ if __name__ == '__main__':
     faker = Faker('uk_UA')
     
     human = Human(faker.address(), faker.phone_number(), faker.job(), faker.random.randint(1000, 9999))
-    man = Man(faker.first_name(), faker.last_name(), faker.address(), faker.phone_number(), faker.job(), faker.random.randint(1000, 9999))
-    woman = Woman(faker.first_name(), faker.last_name(), faker.address(), faker.phone_number(), faker.job(), faker.random.randint(1000, 9999))
+    man = Man(faker.address(), faker.phone_number(), faker.job(), faker.random.randint(1000, 9999), faker.first_name(), faker.last_name())
+    woman = Woman(faker.address(), faker.phone_number(), faker.job(), faker.random.randint(1000, 9999), faker.first_name(), faker.last_name())
     
     human.show_info()
     print('-----')

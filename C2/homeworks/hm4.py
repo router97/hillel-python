@@ -7,7 +7,7 @@ class Human:
                  phone: str, 
                  job: str, 
                  salary: int):
-        self.adress = address
+        self.address = address
         self.phone = phone
         self.job = job
         self.salary = salary

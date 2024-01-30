@@ -3,11 +3,11 @@
 class Human:
     
     def __init__(self, 
-                 adress: str, 
+                 address: str, 
                  phone: str, 
                  job: str, 
                  salary: int):
-        self.adress = adress
+        self.adress = address
         self.phone = phone
         self.job = job
         self.salary = salary
@@ -19,26 +19,26 @@ class Human:
 class Man(Human):
     
     def __init__(self, 
-                 adress: str, 
+                 address: str, 
                  phone: str, 
                  job: str, 
                  salary: int, 
                  first_name: str, 
                  last_name: str):
-        super().__init__(adress, phone, job, salary)
+        super().__init__(address, phone, job, salary)
         self.first_name = first_name
         self.last_name = last_name
 
 class Woman(Human):
     
     def __init__(self, 
-                 adress: str, 
+                 address: str, 
                  phone: str, 
                  job: str, 
                  salary: int, 
                  first_name: str, 
                  last_name: str):
-        super().__init__(adress, phone, job, salary)
+        super().__init__(address, phone, job, salary)
         self.first_name = first_name
         self.last_name = last_name
 
